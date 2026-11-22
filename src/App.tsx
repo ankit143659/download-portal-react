@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
 import { Key, Download, Check, AlertCircle, Upload, LogOut } from 'lucide-react';
+import UnderMaintenance from './UnderMaintenance';
 
 interface AppData {
   appName: string;
@@ -9,7 +10,13 @@ interface AppData {
   size: string;
 }
 
+const IS_UNDER_MAINTENANCE = false;
+
 function App() {
+  if (IS_UNDER_MAINTENANCE) {
+    return <UnderMaintenance />;
+  }
+
   const [key, setKey] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);

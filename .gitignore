@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# Vercel-specific files (not needed for Netlify)
+_vercel_api_backup/
+vercel.json
+
+# Build archives
+*.zip
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
